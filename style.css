@@ -2772,3 +2772,19 @@ body.gp-theme-zephyr .gp-toast { background: rgba(255,255,255,.96); color: #1c23
 .gp-note-meta .gp-tw-time { flex: 1 1 auto; }
 .gp-note-eye { width: 28px; height: 28px; font-size: 11px; }
 
+/* ═══ Patch: safe-area / Dynamic Island support ═══ */
+@media (max-width: 600px) {
+    .gp-statusbar {
+        padding-top: calc(12px + env(safe-area-inset-top, 0px));
+    }
+    .gp-homebar {
+        margin-bottom: calc(9px + env(safe-area-inset-bottom, 0px));
+    }
+    .gp-inputbar {
+        padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    }
+    #gp-fab {
+        right: max(12px, env(safe-area-inset-right, 0px));
+        bottom: calc(150px + env(safe-area-inset-bottom, 0px));
+    }
+}
